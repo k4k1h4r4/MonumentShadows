@@ -81,33 +81,44 @@
   .logo-block { text-decoration: none; }
   .logo-name {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--white);
-    letter-spacing: 1px;
     display: block;
     line-height: 1.1;
   }
   .logo-sub {
     font-family: 'Lato', sans-serif;
     font-size: 9px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
     display: block;
-    margin-top: 2px;
   }
+
+  nav {
+    display:flex;
+    gap:36px;
+    align-items:center;
+  }
+
   nav a {
     font-family: 'Lato', sans-serif;
     font-size: 11px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--gold-light);
-    text-decoration: none;
-    margin-left: 32px;
-    transition: color 0.2s;
+    text-decoration:none;
+    padding-bottom:4px;
+    border-bottom:2px solid transparent;
+    transition: color 0.2s,border-color 0.2s;
   }
-  nav a:hover { color: var(--white); }
+
+  nav a:hover,
+  nav a.active {
+    color: var(--white);
+    border-bottom-color: var(--gold);
+  }
 
   /* HERO */
   .hero {
@@ -334,15 +345,21 @@
 
 <header>
   <div class="header-inner">
-    <a class="logo-block" href="theme_course_scoring.html">
+    <a class="logo-block" href="index.html">
       <span class="logo-name">Monument Shadows</span>
-      <span class="logo-sub">Golf Club · Live Scoring</span>
+      <span class="logo-sub">Golf Club</span>
     </a>
-    <nav>
-      <a href="theme_course_scoring.html">The Course</a>
-      <a href="theme_scoring_hub.html">Scoring</a>
-      <a href="theme_leaderboard.html">Leaderboard</a>
-    </nav>
+    <div class="header-controls">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="theme_scoring_hub.html" class="active">Scoring</a>
+        <a href="theme_leaderboard.html">Leaderboard</a>
+      </nav>
+      <div class="theme-switcher" aria-label="Theme switcher">
+        <button class="theme-button" type="button" data-theme-option="augusta" aria-pressed="true">Augusta</button>
+        <button class="theme-button" type="button" data-theme-option="shadows" aria-pressed="false">Shadows</button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -439,7 +456,7 @@
 
 </div>
 
-<footer>Monument Shadows Golf Club &nbsp;·&nbsp; Gering, NE 69341</footer>
+<footer>Monument Shadows Golf Club &nbsp;·&nbsp; Gering, NE</footer>
 
 <script>
   const SUPABASE_URL = 'https://znqnnaslskjewfxcswxw.supabase.co';
