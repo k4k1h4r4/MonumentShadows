@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Course — Monument Shadows Golf Club</title>
+<title>Home — Monument Shadows Golf Club</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -221,6 +221,72 @@
     height: 2px;
     background: var(--gold);
     margin: 24px 0;
+  }
+
+  .hero-actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 2px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+
+  .hero-btn-primary {
+    background: var(--gold);
+    color: var(--green-deep);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  .hero-btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 1px rgba(201,168,76,0.5),
+      0 0 20px rgba(201,168,76,0.35),
+      0 14px 40px rgba(0,0,0,0.6);
+  }
+
+  .hero-btn-secondary {
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light);
+    background: rgba(26,61,43,0.18);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+  }
+
+  .hero-btn-secondary:hover {
+    background: rgba(201,168,76,0.08);
+    border-color: var(--gold);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  }
+
+
+
+  @media (max-width: 680px) {
+    .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-btn {
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
   }
 
   /* ============================================================
@@ -901,6 +967,44 @@
     box-shadow: inset 0 0 0 1px rgba(201,168,76,0.24), 0 6px 14px rgba(0,0,0,0.12);
   }
 
+
+  .score-cta-band {
+    max-width: 1200px;
+    margin: 0 auto 72px;
+    padding: 0 32px;
+  }
+  .score-cta-inner {
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(242,237,228,0.98) 100%);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+    padding: 40px 32px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .score-cta-copy h3 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; color: var(--green-deep); margin-bottom: 8px; }
+  .score-cta-copy p { color: var(--text-muted); font-size: 18px; }
+  .score-cta-action {
+    border: 1px solid var(--border);
+    background: var(--white);
+    padding: 24px;
+  }
+  .score-cta-eyebrow { font-family: 'Lato', sans-serif; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .score-cta-action h4 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--green-deep); margin-bottom: 8px; }
+  .score-cta-action p { color: var(--text-muted); font-size: 16px; margin-bottom: 18px; }
+  .score-cta-btn { display: inline-block; text-decoration: none; padding: 12px 18px; background: var(--green-deep); color: var(--white); font-family: 'Lato', sans-serif; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; }
+  .score-cta-btn.gold { background: var(--gold); color: var(--green-deep); }
+  body[data-theme="shadows"] .score-cta-inner { background: linear-gradient(180deg, rgba(19,25,34,0.96) 0%, rgba(14,18,24,0.92) 100%); }
+  body[data-theme="shadows"] .score-cta-action { background: rgba(255,255,255,0.03); }
+  body[data-theme="shadows"] .score-cta-copy h3,
+  body[data-theme="shadows"] .score-cta-action h4 { color: var(--white); }
+  body[data-theme="shadows"] .score-cta-copy p,
+  body[data-theme="shadows"] .score-cta-action p { color: var(--text-muted); }
+  @media (max-width: 960px) {
+    .score-cta-inner { grid-template-columns: 1fr; }
+  }
+
   /* ============================================================
      SHADOWS THEME OVERRIDES
   ============================================================ */
@@ -1080,23 +1184,19 @@
 <body>
 
 <!-- TOP BAR -->
-<div class="top-bar">2550 Club House Drive &nbsp;·&nbsp; Gering, Nebraska &nbsp;</div>
-
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a class="logo-block" href="#">
+    <a class="logo-block" href="index.html">
       <span class="logo-name">Monument Shadows</span>
       <span class="logo-sub">Golf Club</span>
     </a>
     <div class="header-controls">
       <nav>
-        <a href="#">Home</a>
-        <a href="#" class="active">The Course</a>
-        <a href="#">Tee Times</a>
-        <a href="#">Membership</a>
-        <a href="#">Dining</a>
-        <a href="#">Contact</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="theme_course_scoring.html">The Course</a>
+        <a href="theme_scoring_hub.html">Scoring</a>
+        <a href="theme_leaderboard.html">Leaderboard</a>
       </nav>
       <div class="theme-switcher" aria-label="Theme switcher">
         <button class="theme-button" type="button" data-theme-option="augusta" aria-pressed="true">Augusta</button>
@@ -1123,6 +1223,10 @@
     <h1 class="hero-title" id="heroTitle">Where the<br><em>Shadows</em> Play</h1>
     <div class="hero-rule"></div>
     <p class="hero-desc" id="heroDesc">Eighteen holes etched into the Nebraska high plains, shaped by wind, silence, and something older than the game itself.</p>
+    <div class="hero-actions">
+      <a class="hero-btn hero-btn-primary" href="https://foreupsoftware.com/index.php/booking/21612/8360#teetimes">Book a Tee Time</a>
+      <a class="hero-btn hero-btn-secondary" href="theme_course_scoring.html">Explore the Course</a>
+    </div>
   </div>
 </section>
 
@@ -1177,317 +1281,29 @@
   </div>
 </div>
 
-<!-- HOLE CARDS -->
-<section class="section">
-  <div class="section-header">
-    <div class="section-eyebrow">Hole by Hole</div>
-    <h2 class="section-title">The Eighteen</h2>
-    <div class="section-rule"></div>
-  </div>
+<!-- FOOTER -->
 
-  <!-- FRONT NINE -->
-  <div class="nine-block">
-    <div class="nine-label">Front Nine <span>Holes 1–9</span></div>
-    <div class="holes-row">
-      <!-- Hole 1 -->
-      <div class="hole-card par4" onclick="openModal(1)">
-        <div class="hole-top"><span class="hole-number">1</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Omen</span>
-          <span class="hole-yardage">354</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>9</strong></span>
-        </div>
-      </div>
-      <!-- Hole 2 -->
-      <div class="hole-card par3" onclick="openModal(2)">
-        <div class="hole-top"><span class="hole-number">2</span><span class="hole-par-badge">Par 3</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Hemlock</span>
-          <span class="hole-yardage">195</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>11</strong></span>
-        </div>
-      </div>
-      <!-- Hole 3 -->
-      <div class="hole-card par4" onclick="openModal(3)">
-        <div class="hole-top"><span class="hole-number">3</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Badlands</span>
-          <span class="hole-yardage">300</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>15</strong></span>
-        </div>
-      </div>
-      <!-- Hole 4 -->
-      <div class="hole-card par5" onclick="openModal(4)">
-        <div class="hole-top"><span class="hole-number">4</span><span class="hole-par-badge">Par 5</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Sentinel</span>
-          <span class="hole-yardage">528</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>5</strong></span>
-        </div>
-      </div>
-      <!-- Hole 5 -->
-      <div class="hole-card par4" onclick="openModal(5)">
-        <div class="hole-top"><span class="hole-number">5</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Strangle</span>
-          <span class="hole-yardage">403</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>1</strong></span>
-        </div>
-      </div>
-      <!-- Hole 6 -->
-      <div class="hole-card par4" onclick="openModal(6)">
-        <div class="hole-top"><span class="hole-number">6</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Rhumba</span>
-          <span class="hole-yardage">303</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>13</strong></span>
-        </div>
-      </div>
-      <!-- Hole 7 -->
-      <div class="hole-card par3" onclick="openModal(7)">
-        <div class="hole-top"><span class="hole-number">7</span><span class="hole-par-badge">Par 3</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Flicker</span>
-          <span class="hole-yardage">157</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>17</strong></span>
-        </div>
-      </div>
-      <!-- Hole 8 -->
-      <div class="hole-card par5" onclick="openModal(8)">
-        <div class="hole-top"><span class="hole-number">8</span><span class="hole-par-badge">Par 5</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Balderdash</span>
-          <span class="hole-yardage">545</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>3</strong></span>
-        </div>
-      </div>
-      <!-- Hole 9 -->
-      <div class="hole-card par4" onclick="openModal(9)">
-        <div class="hole-top"><span class="hole-number">9</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Darkfall</span>
-          <span class="hole-yardage">352</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>7</strong></span>
-        </div>
-      </div>
+<section class="score-cta-band">
+  <div class="score-cta-inner">
+    <div class="score-cta-copy">
+      <div class="section-eyebrow">Tournament Play</div>
+      <h3>Bring Monument Shadows to the first tee.</h3>
+      <p>Create an event, join a round, enter scores hole by hole, and follow the live board from anywhere on the course.</p>
     </div>
-  </div>
-
-  <!-- BACK NINE -->
-  <div class="nine-block">
-    <div class="nine-label">Back Nine <span>Holes 10–18</span></div>
-    <div class="holes-row">
-      <!-- Hole 10 -->
-      <div class="hole-card par4" onclick="openModal(10)">
-        <div class="hole-top"><span class="hole-number">10</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Harbinger</span>
-          <span class="hole-yardage">368</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>14</strong></span>
-        </div>
-      </div>
-      <!-- Hole 11 -->
-      <div class="hole-card par4" onclick="openModal(11)">
-        <div class="hole-top"><span class="hole-number">11</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Exile</span>
-          <span class="hole-yardage">399</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>2</strong></span>
-        </div>
-      </div>
-      <!-- Hole 12 -->
-      <div class="hole-card par5" onclick="openModal(12)">
-        <div class="hole-top"><span class="hole-number">12</span><span class="hole-par-badge">Par 5</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Shroud</span>
-          <span class="hole-yardage">475</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>8</strong></span>
-        </div>
-      </div>
-      <!-- Hole 13 -->
-      <div class="hole-card par3" onclick="openModal(13)">
-        <div class="hole-top"><span class="hole-number">13</span><span class="hole-par-badge">Par 3</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Lure</span>
-          <span class="hole-yardage">142</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>18</strong></span>
-        </div>
-      </div>
-      <!-- Hole 14 -->
-      <div class="hole-card par4" onclick="openModal(14)">
-        <div class="hole-top"><span class="hole-number">14</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Obscura</span>
-          <span class="hole-yardage">397</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>6</strong></span>
-        </div>
-      </div>
-      <!-- Hole 15 -->
-      <div class="hole-card par4" onclick="openModal(15)">
-        <div class="hole-top"><span class="hole-number">15</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Mercy</span>
-          <span class="hole-yardage">324</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>16</strong></span>
-        </div>
-      </div>
-      <!-- Hole 16 -->
-      <div class="hole-card par5" onclick="openModal(16)">
-        <div class="hole-top"><span class="hole-number">16</span><span class="hole-par-badge">Par 5</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Dirge</span>
-          <span class="hole-yardage">510</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>4</strong></span>
-        </div>
-      </div>
-      <!-- Hole 17 -->
-      <div class="hole-card par3" onclick="openModal(17)">
-        <div class="hole-top"><span class="hole-number">17</span><span class="hole-par-badge">Par 3</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Rotwind</span>
-          <span class="hole-yardage">178</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>12</strong></span>
-        </div>
-      </div>
-      <!-- Hole 18 -->
-      <div class="hole-card par4" onclick="openModal(18)">
-        <div class="hole-top"><span class="hole-number">18</span><span class="hole-par-badge">Par 4</span></div>
-        <div class="hole-body">
-          <span class="hole-name">Reckoning</span>
-          <span class="hole-yardage">378</span>
-          <span class="hole-yardage-label">Blue Yards</span>
-          <span class="hole-hdcp">HDCP <strong>10</strong></span>
-        </div>
-      </div>
+    <div class="score-cta-action">
+      <div class="score-cta-eyebrow">Start Play</div>
+      <h4>Create or Join</h4>
+      <p>Open the scoring hub to generate an event code or join an existing round.</p>
+      <a class="score-cta-btn gold" href="theme_scoring_hub.html">Open Scoring</a>
+    </div>
+    <div class="score-cta-action">
+      <div class="score-cta-eyebrow">Watch Live</div>
+      <h4>Leaderboard</h4>
+      <p>Load any event code to view live standings, hole-by-hole progress, and the current leader.</p>
+      <a class="score-cta-btn" href="theme_leaderboard.html">View Leaderboard</a>
     </div>
   </div>
 </section>
-
-<!-- SCORECARD -->
-<div class="scorecard-section">
-  <div class="scorecard-inner">
-    <div class="section-header">
-      <div class="section-eyebrow">Official</div>
-      <h2 class="section-title">Scorecard</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="scorecard-wrap">
-      <table class="scorecard">
-        <thead>
-          <tr class="header-row">
-            <th class="col-label">Tee</th>
-            <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
-            <th class="total">Out</th>
-            <th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th>
-            <th class="total">In</th>
-            <th class="grand-total">TOT</th>
-          </tr>
-          <tr class="hole-names">
-            <td class="col-label" style="font-family:'Lato',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);font-style:normal;">Hole Name</td>
-            <td>Omen</td><td>Hemlock</td><td>Badlands</td><td>Sentinel</td><td>Strangle</td><td>Rhumba</td><td>Flicker</td><td>Balderdash</td><td>Darkfall</td>
-            <td class="total"></td>
-            <td>Harbinger</td><td>Exile</td><td>Shroud</td><td>Lure</td><td>Obscura</td><td>Mercy</td><td>Dirge</td><td>Rotwind</td><td>Reckoning</td>
-            <td class="total"></td><td class="grand-total"></td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="row-blue">
-            <td class="row-label col-label">Blue 69.4/120</td>
-            <td>354</td><td>195</td><td>300</td><td>528</td><td>403</td><td>303</td><td>157</td><td>545</td><td>352</td>
-            <td class="total">3137</td>
-            <td>368</td><td>399</td><td>475</td><td>142</td><td>397</td><td>324</td><td>510</td><td>178</td><td>378</td>
-            <td class="total">3171</td>
-            <td class="grand-total">6308</td>
-          </tr>
-          <tr class="row-par">
-            <td class="row-label col-label">Par</td>
-            <td>4</td><td>3</td><td>4</td><td>5</td><td>4</td><td>4</td><td>3</td><td>5</td><td>4</td>
-            <td class="total">36</td>
-            <td>4</td><td>4</td><td>5</td><td>3</td><td>4</td><td>4</td><td>5</td><td>3</td><td>4</td>
-            <td class="total">36</td>
-            <td class="grand-total">72</td>
-          </tr>
-          <tr class="row-hdcp">
-            <td class="row-label col-label">HDCP</td>
-            <td>9</td><td>11</td><td>15</td><td>5</td><td>1</td><td>13</td><td>17</td><td>3</td><td>7</td>
-            <td class="total"></td>
-            <td>14</td><td>2</td><td>8</td><td>18</td><td>6</td><td>16</td><td>4</td><td>12</td><td>10</td>
-            <td class="total"></td>
-            <td class="grand-total"></td>
-          </tr>
-          <!-- Score rows for players -->
-          <tr class="row-score">
-            <td class="row-label col-label" style="font-family:'Lato',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.35);">Player 1</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td class="total"></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td class="total"></td>
-            <td class="grand-total"></td>
-          </tr>
-          <tr class="row-score">
-            <td class="row-label col-label" style="font-family:'Lato',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.35);">Player 2</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td class="total"></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td class="total"></td>
-            <td class="grand-total"></td>
-          </tr>
-          <tr class="row-score">
-            <td class="row-label col-label" style="font-family:'Lato',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.35);">Player 3</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td class="total"></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td class="total"></td>
-            <td class="grand-total"></td>
-          </tr>
-          <tr class="row-score">
-            <td class="row-label col-label" style="font-family:'Lato',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.35);">Player 4</td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td class="total"></td>
-            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            <td class="total"></td>
-            <td class="grand-total"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Other tees note -->
-    <div style="margin-top:32px;display:grid;grid-template-columns:repeat(3,auto);gap:32px;justify-content:center;">
-      <div style="text-align:center;">
-        <span style="display:inline-block;width:14px;height:14px;background:#c9a84c;border-radius:50%;vertical-align:middle;margin-right:8px;"></span>
-        <span style="font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);">Gold &nbsp;72.0/125 &nbsp;— &nbsp;6,870 yds</span>
-      </div>
-      <div style="text-align:center;">
-        <span style="display:inline-block;width:14px;height:14px;background:#e8e8e8;border-radius:50%;vertical-align:middle;margin-right:8px;"></span>
-        <span style="font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);">White &nbsp;66.5/112 &nbsp;— &nbsp;5,617 yds</span>
-      </div>
-      <div style="text-align:center;">
-        <span style="display:inline-block;width:14px;height:14px;background:#c0392b;border-radius:50%;vertical-align:middle;margin-right:8px;"></span>
-        <span style="font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);">Red &nbsp;67.5/116 &nbsp;— &nbsp;4,901 yds</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Monument Shadows Golf Club</div>
   <p>2550 Club House Drive &nbsp;·&nbsp; Gering, NE 69341</p>
@@ -1576,9 +1392,9 @@
     const eyebrow = document.getElementById('heroEyebrow');
     const title = document.getElementById('heroTitle');
     const desc = document.getElementById('heroDesc');
-    if (eyebrow) eyebrow.innerHTML = content.eyebrow;
+    if (eyebrow) eyebrow.textContent = content.eyebrow;
     if (title) title.innerHTML = content.title;
-    if (desc) desc.innerHTML = content.desc;
+    if (desc) desc.textContent = content.desc;
   }
 
   function openModal(num) {
