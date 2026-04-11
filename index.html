@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home — Monument Shadows Golf Club</title>
+<title>The Course — Monument Shadows Golf Club</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -221,72 +221,6 @@
     height: 2px;
     background: var(--gold);
     margin: 24px 0;
-  }
-
-  .hero-actions {
-    margin-top: 28px;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .hero-btn {
-    display: inline-block;
-    padding: 16px 32px;
-    border-radius: 2px;
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    position: relative;
-  }
-
-  .hero-btn-primary {
-    background: var(--gold);
-    color: var(--green-deep);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  }
-
-  .hero-btn-primary:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow:
-      0 0 0 1px rgba(201,168,76,0.5),
-      0 0 20px rgba(201,168,76,0.35),
-      0 14px 40px rgba(0,0,0,0.6);
-  }
-
-  .hero-btn-secondary {
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold-light);
-    background: rgba(26,61,43,0.18);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.22);
-  }
-
-  .hero-btn-secondary:hover {
-    background: rgba(201,168,76,0.08);
-    border-color: var(--gold);
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  }
-
-
-
-  @media (max-width: 680px) {
-    .hero-actions {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .hero-btn {
-      width: 100%;
-      max-width: 320px;
-      text-align: center;
-    }
   }
 
   /* ============================================================
@@ -1179,11 +1113,80 @@
     .theme-switcher { margin-left: auto; }
   }
 
+
+
+  .mobile-menu-toggle {
+    display: none;
+    appearance: none;
+    border: 1px solid rgba(201,168,76,0.45);
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    border-radius: 10px;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 999px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px 20px;
+  }
+
+  .mobile-menu.open { display: block; }
+
+  .mobile-menu-panel {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,168,76,0.28);
+    border-radius: 18px;
+    padding: 14px 16px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+  }
+
+  .mobile-menu a {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--gold-light);
+    padding: 12px 4px;
+    border-bottom: 1px solid rgba(201,168,76,0.18);
+  }
+
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a.active { color: var(--white); }
+
+  @media (max-width: 900px) {
+    .mobile-menu-toggle { display: inline-flex; }
+  }
+
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
+
+
 <!-- HEADER -->
 <header>
   <div class="header-inner">
@@ -1194,14 +1197,26 @@
     <div class="header-controls">
       <nav>
         <a href="index.html" class="active">Home</a>
-        <a href="theme_course_scoring.html">The Course</a>
+        <a href="theme_course.html">The Course</a>
         <a href="theme_scoring_hub.html">Scoring</a>
         <a href="theme_leaderboard.html">Leaderboard</a>
       </nav>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" data-mobile-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
       <div class="theme-switcher" aria-label="Theme switcher">
         <button class="theme-button" type="button" data-theme-option="augusta" aria-pressed="true">Augusta</button>
         <button class="theme-button" type="button" data-theme-option="shadows" aria-pressed="false">Shadows</button>
       </div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu-panel">
+      <a href="index.html" class="active">Home</a>
+      <a href="theme_course.html">The Course</a>
+      <a href="theme_scoring_hub.html">Scoring</a>
+      <a href="theme_leaderboard.html">Leaderboard</a>
     </div>
   </div>
 </header>
@@ -1223,9 +1238,9 @@
     <h1 class="hero-title" id="heroTitle">Where the<br><em>Shadows</em> Play</h1>
     <div class="hero-rule"></div>
     <p class="hero-desc" id="heroDesc">Eighteen holes etched into the Nebraska high plains, shaped by wind, silence, and something older than the game itself.</p>
-    <div class="hero-actions">
-      <a class="hero-btn hero-btn-primary" href="https://foreupsoftware.com/index.php/booking/21612/8360#teetimes">Book a Tee Time</a>
-      <a class="hero-btn hero-btn-secondary" href="theme_course_scoring.html">Explore the Course</a>
+    <div class="hero-actions" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
+      <a href="https://foreupsoftware.com/index.php/booking/21612/8360#teetimes" class="btn btn-gold" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;text-decoration:none;font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;border-radius:999px;">Book a Tee Time</a>
+      <a href="theme_course.html" class="btn" style="display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;text-decoration:none;font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;border-radius:999px;border:1px solid rgba(255,255,255,0.35);color:var(--white);background:rgba(255,255,255,0.08);">Explore the Course</a>
     </div>
   </div>
 </section>
@@ -1264,22 +1279,14 @@
       <div class="fact-block">
         <span class="fact-label">Location</span>
         <span class="fact-value">Gering, Nebraska</span>
-      </div>
-      <div class="fact-block">
-        <span class="fact-label">Gold Rating/Slope</span>
-        <span class="fact-value">72.0 / 125</span>
-      </div>
-      <div class="fact-block">
-        <span class="fact-label">White Rating/Slope</span>
-        <span class="fact-value">66.5 / 112</span>
-      </div>
-      <div class="fact-block">
-        <span class="fact-label">Red Rating/Slope</span>
-        <span class="fact-value">67.5 / 116</span>
-      </div>
+      </div>      
     </div>
   </div>
 </div>
+
+
+
+
 
 <!-- FOOTER -->
 
@@ -1309,47 +1316,7 @@
   <p>2550 Club House Drive &nbsp;·&nbsp; Gering, NE 69341</p>
 </footer>
 
-<!-- HOLE MODAL -->
-<div class="hole-modal-overlay" id="holeModal" onclick="closeModal(event)">
-  <div class="hole-modal">
-    <div class="hole-modal-top">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <div class="modal-hole-num" id="modalNum">1</div>
-      <div class="modal-eyebrow" id="modalEyebrow">Hole 1</div>
-      <div class="modal-hole-name" id="modalName">Omen</div>
-    </div>
-    <div class="hole-modal-body">
-      <div class="modal-stats">
-        <div class="modal-stat">
-          <span class="modal-stat-val" id="modalPar">4</span>
-          <span class="modal-stat-lbl">Par</span>
-        </div>
-        <div class="modal-stat">
-          <span class="modal-stat-val" id="modalYds">354</span>
-          <span class="modal-stat-lbl">Blue Yards</span>
-        </div>
-        <div class="modal-stat">
-          <span class="modal-stat-val" id="modalHdcp">9</span>
-          <span class="modal-stat-lbl">Handicap</span>
-        </div>
-      </div>
-      <div class="modal-yardages">
-        <div class="modal-tee">
-          <span class="modal-tee-name"><span class="modal-tee-color" style="background:#c9a84c;"></span>Gold</span>
-          <span class="modal-tee-yds" id="modalGold">382</span>
-        </div>
-        <div class="modal-tee">
-          <span class="modal-tee-name"><span class="modal-tee-color" style="background:#3a6ea8;"></span>Blue</span>
-          <span class="modal-tee-yds" id="modalBlue">354</span>
-        </div>
-        <div class="modal-tee">
-          <span class="modal-tee-name"><span class="modal-tee-color" style="background:#c0392b;"></span>Red</span>
-          <span class="modal-tee-yds" id="modalRed">253</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <script>
   const heroContent = {
@@ -1392,9 +1359,9 @@
     const eyebrow = document.getElementById('heroEyebrow');
     const title = document.getElementById('heroTitle');
     const desc = document.getElementById('heroDesc');
-    if (eyebrow) eyebrow.textContent = content.eyebrow;
+    if (eyebrow) eyebrow.innerHTML = content.eyebrow;
     if (title) title.innerHTML = content.title;
-    if (desc) desc.textContent = content.desc;
+    if (desc) desc.innerHTML = content.desc;
   }
 
   function openModal(num) {
@@ -1442,5 +1409,37 @@
   applyTheme(initialTheme);
 
 </script>
+
+<script>
+(function () {
+  const toggle = document.querySelector('[data-mobile-menu-toggle]');
+  const menu = document.querySelector('[data-mobile-menu]');
+  if (!toggle || !menu) return;
+
+  function closeMenu() {
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+  }
+
+  toggle.addEventListener('click', function () {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('open', !expanded);
+  });
+
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) closeMenu();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeMenu();
+  });
+})();
+</script>
+
 </body>
 </html>
