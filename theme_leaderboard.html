@@ -358,7 +358,7 @@
     color: var(--text-muted);
   }
 
-  .event-select-btn { color: var(--white); }
+  .event-select-btn { color: var(--green-deep); }
   body[data-theme="shadows"] .event-select-btn { color: var(--white); }
 
   footer {
@@ -383,7 +383,7 @@
 
 <header>
   <div class="header-inner">
-    <a class="logo-block" href="theme_course_scoring.html"><span class="logo-name">Monument Shadows</span><span class="logo-sub">Golf Club</span></a><div class="header-controls"><nav><a href="theme_course_scoring.html">Home</a><a href="theme_scoring_hub.html">Scoring</a><a href="theme_leaderboard.html" class="active">Leaderboard</a></nav><div class="theme-switcher" aria-label="Theme switcher"><button class="theme-button" type="button" data-theme-option="augusta" aria-pressed="true">Augusta</button><button class="theme-button" type="button" data-theme-option="shadows" aria-pressed="false">Shadows</button></div></div>
+    <a class="logo-block" href="index.html"><span class="logo-name">Monument Shadows</span><span class="logo-sub">Golf Club</span></a><div class="header-controls"><nav><a href="index.html">Home</a><a href="theme_scoring_hub.html">Scoring</a><a href="theme_leaderboard.html" class="active">Leaderboard</a></nav><div class="theme-switcher" aria-label="Theme switcher"><button class="theme-button" type="button" data-theme-option="augusta" aria-pressed="true">Augusta</button><button class="theme-button" type="button" data-theme-option="shadows" aria-pressed="false">Shadows</button></div></div>
   </div>
 </header>
 
@@ -495,7 +495,6 @@ async function loadRecentEvents() {
       <tr>
         <td><div class="lb-name">${event.name || 'Untitled Event'}</div><div class="lb-thru">Code ${event.code || '—'}</div></td>
         <td class="right"><div class="lb-total">${formatLocalDate(event.date)}</div></td>
-        <td class="right"><div class="lb-total">${event.holes || '—'} Holes</div></td>
         <td class="right"><button class="btn event-select-btn" style="width:auto;margin-top:0;padding:10px 16px;" onclick="selectEventByCode('${event.code || ''}')">View</button></td>
       </tr>
     `).join('');
@@ -506,7 +505,6 @@ async function loadRecentEvents() {
           <tr>
             <th>Event</th>
             <th class="right" style="width:140px">Date</th>
-            <th class="right" style="width:120px">Format</th>
             <th class="right" style="width:100px">Open</th>
           </tr>
         </thead>
