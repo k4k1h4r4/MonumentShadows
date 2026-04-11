@@ -373,6 +373,45 @@
 
 <div class="cards-wrap">
 
+  <!-- JOIN EVENT -->
+  <div class="card">
+    <div class="card-eyebrow">Player / Team</div>
+    <h2>JOIN Event</h2>
+    <p>Enter the 3-character code from your organizer to join an event.</p>
+    <div class="card-rule"></div>
+
+    <label for="joinCode">Event Code</label>
+    <input type="text" class="join-code-input" id="joinCode" maxlength="3" placeholder="---" oninput="this.value=this.value.toUpperCase()">
+
+    <label for="entryName">Your Name / Team Name</label>
+    <input type="text" id="entryName" placeholder="e.g. Smith & Jones" maxlength="40">
+
+    <label for="joinStart">Starting Hole</label>
+    <select id="joinStart">
+      <option value="1" selected>Hole 1 — Omen</option>
+      <option value="2">Hole 2 — Hemlock</option>
+      <option value="3">Hole 3 — Badlands</option>
+      <option value="4">Hole 4 — Sentinel</option>
+      <option value="5">Hole 5 — Strangle</option>
+      <option value="6">Hole 6 — Rhumba</option>
+      <option value="7">Hole 7 — Flicker</option>
+      <option value="8">Hole 8 — Balderdash</option>
+      <option value="9">Hole 9 — Darkfall</option>
+      <option value="10">Hole 10 — Harbinger</option>
+      <option value="11">Hole 11 — Exile</option>
+      <option value="12">Hole 12 — Shroud</option>
+      <option value="13">Hole 13 — Lure</option>
+      <option value="14">Hole 14 — Obscura</option>
+      <option value="15">Hole 15 — Mercy</option>
+      <option value="16">Hole 16 — Dirge</option>
+      <option value="17">Hole 17 — Rotwind</option>
+      <option value="18">Hole 18 — Reckoning</option>
+    </select>
+
+    <button class="btn" onclick="joinEvent()">Join &amp; Start Scoring</button>
+    <div class="msg" id="joinMsg"></div>
+  </div>
+  
   <!-- CREATE EVENT -->
   <div class="card">
     <div class="card-eyebrow">Organizer</div>
@@ -414,45 +453,6 @@
       <div class="code-name" id="codeName"></div>
       <a class="btn" id="codeLeaderboardBtn" href="#" style="margin-top:16px;text-decoration:none;display:inline-block;width:auto;padding:10px 24px;">View Leaderboard</a>
     </div>
-  </div>
-
-  <!-- JOIN EVENT -->
-  <div class="card">
-    <div class="card-eyebrow">Player / Team</div>
-    <h2>JOIN Event</h2>
-    <p>Enter the 3-character code from your organizer to join an event.</p>
-    <div class="card-rule"></div>
-
-    <label for="joinCode">Event Code</label>
-    <input type="text" class="join-code-input" id="joinCode" maxlength="3" placeholder="---" oninput="this.value=this.value.toUpperCase()">
-
-    <label for="entryName">Your Name / Team Name</label>
-    <input type="text" id="entryName" placeholder="e.g. Smith & Jones" maxlength="40">
-
-    <label for="joinStart">Starting Hole</label>
-    <select id="joinStart">
-      <option value="1" selected>Hole 1 — Omen</option>
-      <option value="2">Hole 2 — Hemlock</option>
-      <option value="3">Hole 3 — Badlands</option>
-      <option value="4">Hole 4 — Sentinel</option>
-      <option value="5">Hole 5 — Strangle</option>
-      <option value="6">Hole 6 — Rhumba</option>
-      <option value="7">Hole 7 — Flicker</option>
-      <option value="8">Hole 8 — Balderdash</option>
-      <option value="9">Hole 9 — Darkfall</option>
-      <option value="10">Hole 10 — Harbinger</option>
-      <option value="11">Hole 11 — Exile</option>
-      <option value="12">Hole 12 — Shroud</option>
-      <option value="13">Hole 13 — Lure</option>
-      <option value="14">Hole 14 — Obscura</option>
-      <option value="15">Hole 15 — Mercy</option>
-      <option value="16">Hole 16 — Dirge</option>
-      <option value="17">Hole 17 — Rotwind</option>
-      <option value="18">Hole 18 — Reckoning</option>
-    </select>
-
-    <button class="btn" onclick="joinEvent()">Join &amp; Start Scoring</button>
-    <div class="msg" id="joinMsg"></div>
   </div>
 
 </div>
